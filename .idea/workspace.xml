@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f639d8a-2a8a-4a4f-ad70-e13f0c3ca7e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/quora-api/src/main/java/com/upgrad/quora/api/controller/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quora-api/src/main/java/com/upgrad/quora/api/controller/QuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quora-service/src/main/java/com/upgrad/quora/service/business/QuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quora-service/src/main/java/com/upgrad/quora/service/dao/QuestionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quora-service/src/main/java/com/upgrad/quora/service/entity/QuestionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-api/quora-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-api/target/classes/com/upgrad/quora/api/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/quora-api/target/classes/com/upgrad/quora/api/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-api/target/classes/com/upgrad/quora/api/exception/RestExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/quora-api/target/classes/com/upgrad/quora/api/exception/RestExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-db/quora-db.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-service/quora-service.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-service/target/classes/com/upgrad/quora/service/business/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/quora-service/target/classes/com/upgrad/quora/service/business/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-service/target/classes/com/upgrad/quora/service/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/quora-service/target/classes/com/upgrad/quora/service/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quora-service/target/classes/com/upgrad/quora/service/entity/UserAuthEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/quora-service/target/classes/com/upgrad/quora/service/entity/UserAuthEntity.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="quora" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lF6NU1FDJeLWzr2qOITRsgBbqx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.QuoraApiApplication">
+    <configuration name="QuoraApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.upgrad.quora.api.QuoraApiApplication" />
+      <module name="quora-api" />
+      <option name="ENABLE_SWING_INSPECTOR" value="true" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.upgrad.quora.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuoraApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="quora-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.upgrad.quora.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.upgrad.quora.api.QuoraApiApplication" />
+      <option name="DEBUG_MODE" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.QuoraApiApplication" />
+      <item itemvalue="Spring Boot.QuoraApiApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.QuoraApiApplication" />
+        <item itemvalue="Spring Boot.QuoraApiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f639d8a-2a8a-4a4f-ad70-e13f0c3ca7e5" name="Default Changelist" comment="" />
+      <created>1607180451606</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607180451606</updated>
+      <workItem from="1607180659722" duration="5571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="215" width="1328" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607185087275">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="414" y="215" width="1328" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607185087275" />
+    <state x="689" y="344" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607184607540">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="689" y="344" key="#com.intellij.ide.util.TreeClassChooserDialog/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184607540" />
+    <state x="808" y="449" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1607183968025">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="808" y="449" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607183968025" />
+    <state x="740" y="301" key="FileChooserDialogImpl" timestamp="1607185114290">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="740" y="301" key="FileChooserDialogImpl/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607185114290" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1607184265820">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265820" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1607184265819">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265819" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1607184265818">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265818" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1607184265819">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265819" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1607184265822">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265822" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1607184265821">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265821" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1607184265821">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265821" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1607184265822">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607184265822" />
+    <state x="656" y="292" width="607" height="536" key="find.popup" timestamp="1607181950387">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="656" y="292" width="607" height="536" key="find.popup/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1607181950387" />
+  </component>
+</project>

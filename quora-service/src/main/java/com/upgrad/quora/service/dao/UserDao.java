@@ -49,12 +49,10 @@ public class UserDao {
      * @return UserEntity - query is successful
      * @return null - no records are available
      */
-    public UserEntity getUserByEmail(final String email){
-        try{
-            return entityManager.createNamedQuery("userByEmail", UserEntity.class)
-                    .setParameter("email", email)
-                    .getSingleResult();
-        }catch(NoResultException nre){
+    public UserEntity getUserByEmail(final String email) {
+        try {
+            return entityManager.createNamedQuery("userByEmail", UserEntity.class).setParameter("email", email).getSingleResult();
+        } catch (NoResultException nre) {
             return null;
         }
     }
@@ -64,8 +62,33 @@ public class UserDao {
      * @param UserAuthEntity
      * @return UserAuthEntity
      */
-    public UserAuthEntity createAuthToken(final UserAuthEntity userAuthEntity){
+    public UserEntity getUserByUuid(final String uuid){
+        try{
+            return entityManager.createNamedQuery("userByUuid", UserEntity.class).setParameter("uuid", uuid).getSingleResult();
+        } catch (NoResultException nre){
+            return null;
+        }
+    }
+
+    public void deleteUser(String uuid) {
+        UserEntity userEntity = getUserByUuid(uuid);
+        entityManager.remove(userEntity);
+    }
+
+    public UserAuthEntity createAuthToken(final UserAuthEntity userAuthEntity) {
         entityManager.persist(userAuthEntity);
         return userAuthEntity;
+    }
+
+    public void updateUser(final UserEntity updatedUserEntity) {
+        entityManager.merge(updatedUserEntity);
+    }
+
+    public UserAuthEntity getUserAuthToken(final String accessToken) {
+        try {
+            return entityManager.createNamedQuery("userAuthTokenByAccessToken", UserAuthEntity.class).setParameter("accessToken", accessToken).getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
     }
 }

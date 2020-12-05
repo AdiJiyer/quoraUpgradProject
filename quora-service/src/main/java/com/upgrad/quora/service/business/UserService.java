@@ -3,92 +3,60 @@ package com.upgrad.quora.service.business;
 import com.upgrad.quora.service.dao.UserDao;
 import com.upgrad.quora.service.entity.UserAuthEntity;
 import com.upgrad.quora.service.entity.UserEntity;
-import com.upgrad.quora.service.exception.AuthenticationFailedException;
-import com.upgrad.quora.service.exception.SignOutRestrictedException;
-import com.upgrad.quora.service.exception.SignUpRestrictedException;
+import com.upgrad.quora.service.exception.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.ZonedDateTime;
-import java.util.UUID;
-/*
- * UserService - Bussiness Logic to process user requests
- */
 @Service
 public class UserService {
 
     @Autowired
-    private UserDao userDao;
+    private AdminService adminService;
 
     @Autowired
-    private PasswordCryptographyProvider cryptographyProvider;
+    private UserDao userDao;
 
-    /*
-     * createUser - Add user
-     * @param UserEntity
-     * @throws SignUpRestrictedException - Username or email already existed
-     * @return UserEntity
+    /**
+     *  method helps create new user signUp and SignIn and SignOut
+     *
+     * @param userEntity the UserEntity object from which new user will be created
+     *
+     * @return UserEntity object
+     *
+     * @throws SignUpRestrictedException if validation for user details conflicts
      */
     @Transactional(propagation = Propagation.REQUIRED)
-    public UserEntity createUser(final UserEntity userEntity) throws SignUpRestrictedException{
-        UserEntity user;
-        user = userDao.getUserByUserName(userEntity.getUserName());
-        if(user != null){
-            throw new SignUpRestrictedException("SGR-001", "Try any other Username, this Username has already been taken");
-        }
-        user =  userDao.getUserByEmail(userEntity.getEmail());
-        if(user != null){
-            throw new SignUpRestrictedException("SGR-002", "This user has already been registered, try with any other emailId");
-        }
-
-        String password = userEntity.getPassword();
-
-        // Encrypt the user entered password
-        String[] encryptedText = cryptographyProvider.encrypt(password);
-        userEntity.setSalt(encryptedText[0]);
-        userEntity.setPassword(encryptedText[1]);
-
-        // role: nonadmin
-        userEntity.setRole("nonadmin");
-
-        return userDao.createUser(userEntity);
+    public UserEntity signup(UserEntity userEntity) throws SignUpRestrictedException {
+        return adminService.createUser(userEntity);
     }
 
-    /*
-     * authenticate - authenticate the user
-     * @param username, password
-     * @throws AuthenticationFailedException - Username not exists or wrong password
-     * @return UserAuthEntity
-     */
     @Transactional(propagation = Propagation.REQUIRED)
-    public UserAuthEntity authenticate(final String username, final String password) throws AuthenticationFailedException {
-        UserEntity userEntity = userDao.getUserByUserName(username);
-        if(userEntity == null){
-            throw new AuthenticationFailedException("ATH-001", "This username does not exist");
+    public UserEntity signout(final String authorizationToken) throws SignOutRestrictedException {
+        return adminService.logoutUser(authorizationToken);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public UserEntity getUser(final String userId, final String authorization) throws AuthorizationFailedException, UserNotFoundException {
+        UserAuthEntity userAuthEntity = userDao.getUserAuthToken(authorization);
+
+        // Validate if user is signed in or not
+        if (userAuthEntity == null) {
+            throw new AuthorizationFailedException("ATHR-001", "User has not signed in");
         }
 
-        String encryptedPassword = PasswordCryptographyProvider.encrypt(password, userEntity.getSalt());
-        if(encryptedPassword.equals(userEntity.getPassword())){
-            JwtTokenProvider jwtTokenProvider = new JwtTokenProvider(encryptedPassword);
-            UserAuthEntity userAuthToken = new UserAuthEntity();
-            userAuthToken.setUser(userEntity);
-
-            final ZonedDateTime now = ZonedDateTime.now();
-            final ZonedDateTime expireAt = now.plusHours(6);
-
-            userAuthToken.setAccessToken(jwtTokenProvider.generateToken(userEntity.getUuid(), now, expireAt));
-
-            userAuthToken.setUuid(UUID.randomUUID().toString());
-            userAuthToken.setLoginAt(now);
-            userAuthToken.setExpiresAt(expireAt);
-
-            userDao.createAuthToken(userAuthToken);
-
-            return userAuthToken;
-        }else{
-            throw new AuthenticationFailedException("ATH-002", "Password failed");
+        // Validate if user has signed out
+        if (userAuthEntity.getLogoutAt() != null) {
+            throw new AuthorizationFailedException("ATHR-002", "User is signed out.Sign in first to get user details");
         }
+
+        // Validate if requested user exist or not
+        UserEntity userEntity = userDao.getUserByUuid(userId);
+        if (userEntity == null) {
+            throw new UserNotFoundException("USR-001", "User with entered uuid does not exist");
+        }
+
+        return userEntity;
     }
 }
