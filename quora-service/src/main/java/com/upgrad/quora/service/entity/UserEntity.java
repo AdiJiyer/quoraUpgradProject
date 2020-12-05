@@ -1,6 +1,8 @@
 package com.upgrad.quora.service.entity;
 
 import org.apache.commons.lang3.builder.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,8 +16,10 @@ import java.io.Serializable;
 @Table(name = "users")
 @NamedQueries(
         {
-                @NamedQuery(name = "userByUsername", query = "select u from UserEntity u where u.userName = :userName"),
-                @NamedQuery(name = "userByEmail", query = "select u from UserEntity u where u.email =:email")
+                @NamedQuery(name = "userByUserName", query = "select ue from UserEntity ue where ue.userName = :userName"),
+                @NamedQuery(name = "userByEmail", query = "select ue from UserEntity ue where ue.email = :email"),
+                @NamedQuery(name = "userByUuid", query = "select ue from UserEntity ue where ue.uuid = :uuid"),
+                @NamedQuery(name = "deleteUserByUuid", query="delete from UserEntity ue where ue.uuid = :uuid"),
         }
 )
 public class UserEntity implements Serializable {
